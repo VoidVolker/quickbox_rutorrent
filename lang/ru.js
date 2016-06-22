@@ -157,8 +157,6 @@ var theUILang =
  EnableTracker			: "Включить",
  ClientVersion			: "Клиент",
  Flags				: "Флаги",
- PeerDL				: "Peer DL",
- PeerDownloaded			: "Peer Downloaded",
  ReqTimeout			: "Таймаут запроса",
  GetTrackerMessage		: "Запрашивать сообщения трекера",
  Help				: "Помощь",
@@ -244,6 +242,7 @@ var theUILang =
  scrapeUpdate			: "Был обновлен",
  trkInterval			: "Интервал",
  logAutoSwitch			: "Автопереключение на закладку 'Лог'",
+ showLabelSize			: "Показывать размер файлов для меток",
  phpParameterUnavailable	: "Директива php register_argc_argv выставлена в Off. Измените ее значение на On, иначе некоторые плагины будут работать некорректно.",
  addTorrentFailedURL		: "Ошибка добавления закачки. Невозможно получить файл по заданному URL.",
  addTorrentFailedFile		: "Ошибка добавления закачки. Полученный контент не является корректным torrent файлом.",
@@ -272,6 +271,8 @@ var theUILang =
  badTempPath 			: "Веб сервер не имеет доступа к директории tmp на чтение/запись/выполнение. ruTorrent не будет работать.",
  badTempPath2			: "rTorrent должен иметь доступ на чтение/выполнение к директории tmp. ruTorrent не будет работать.",
  doRandomizeHash		: "Сделать hash уникальным",
- Recreate_files			: "Queue files recreation",
- Address			: "Адрес"
+ Recreate_files 		: "Воссоздать файлы торрента",
+ Address			: "Адрес",
+ PeerDL 			: "Скорость пира",
+ PeerDownloaded 		: "Скачано пиром"
 };
