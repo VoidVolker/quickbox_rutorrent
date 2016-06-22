@@ -157,8 +157,6 @@ var theUILang =
  EnableTracker			: "Inschakelen",
  ClientVersion			: "Client",
  Flags				: "Land",
- PeerDL				: "Peer DL",
- PeerDownloaded			: "Peer Downloaded",
  ReqTimeout			: "Timeout Aanvraag",
  GetTrackerMessage		: "Ontvang trackerberichten",
  Help				: "Help",
@@ -244,6 +242,7 @@ var theUILang =
  scrapeUpdate			: "Laatst geupdate",
  trkInterval			: "Interval",
  logAutoSwitch			: "Autoswitch to 'Log' tab",
+ showLabelSize			: "Show label size",
  phpParameterUnavailable	: "PHP-instelling 'register_argc_argv' staat op OFF, waardoor sommige plugins niet kunnen functioneren. Wijzig de instelling naar ON.",
  addTorrentFailedURL		: "Fout bij toevoegen torrent: kan URL niet ophalen.",
  addTorrentFailedFile		: "Fout bij toevoegen torrent: opgehaalde informatie is geen geldig torrent-bestand.",
@@ -272,6 +271,8 @@ var theUILang =
  badTempPath 			: "Webserver-gebruiker heeft geen lees-, schrijf of uitvoerrechten op de tmp-map. ruTorrent zal niet functioneren.",
  badTempPath2			: "rTorrent-gebruiker moet lees- en uitvoerrechten hebben op de tmp-map. ruTorrent zal niet functioneren.",
  doRandomizeHash		: "Randomize info hashes for cross-seeding",
- Recreate_files			: "Queue files recreation",
- Address			: "Address"
+ Recreate_files 		: "Queue files recreation",
+ Address			: "Address",
+ PeerDL 			: "Peer DL",
+ PeerDownloaded 		: "Peer Downloaded"
 };

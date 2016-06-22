@@ -157,8 +157,6 @@ var theUILang =
  EnableTracker			: "Enable",
  ClientVersion			: "Client",
  Flags				: "Flags",
- PeerDL				: "Peer DL",
- PeerDownloaded			: "Peer Downloaded",
  ReqTimeout			: "Request timeout",
  GetTrackerMessage		: "Receive messages from tracker",
  Help				: "Help",
@@ -244,6 +242,7 @@ var theUILang =
  scrapeUpdate			: "Last Updated",
  trkInterval			: "Interval",
  logAutoSwitch			: "Autoswitch to 'Log' tab",
+ showLabelSize			: "Show label size",
  phpParameterUnavailable	: "PHP directive register_argc_argv is set to OFF. Change to ON, otherwise some plugins won't work correctly.",
  addTorrentFailedURL		: "Failed to add torrent. Can't retrieve URL.",
  addTorrentFailedFile		: "Failed to add torrent. The retrieved content is not a valid torrent file.",
@@ -272,6 +271,8 @@ var theUILang =
  badTempPath 			: "Webserver user doesn't have read/write/execute access to the tmp directory. ruTorrent will not work.",
  badTempPath2			: "rTorrent user must have read/execute access to the tmp directory. ruTorrent will not work.",
  doRandomizeHash		: "Randomize info hashes for cross-seeding",
- Recreate_files			: "Queue files recreation",
- Address			: "Address"
+ Recreate_files 		: "Queue files recreation",
+ Address			: "Address",
+ PeerDL 			: "Peer DL",
+ PeerDownloaded 		: "Peer Downloaded"
 };

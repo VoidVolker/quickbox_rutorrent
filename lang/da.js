@@ -157,8 +157,6 @@ var theUILang =
  EnableTracker			: "Slå til",
  ClientVersion			: "Klient",
  Flags				: "Flag",
- PeerDL				: "Peer DL",
- PeerDownloaded			: "Peer Downloaded",
  ReqTimeout			: "Forespørgsels timeout",
  GetTrackerMessage		: "Modtag beskeder fra tracker",
  Help				: "Hjælp",
@@ -244,6 +242,7 @@ var theUILang =
  scrapeUpdate			: "Sidst Opdateret",
  trkInterval			: "Interval",
  logAutoSwitch			: "Autoswitch til 'Log' fanen",
+ showLabelSize			: "Show label size",
  phpParameterUnavailable	: "PHP directive register_argc_argv er sat til OFF. Skift til ON, ellers vil nogle plugins ikke virke korrekt.",
  addTorrentFailedURL		: "Kunne ikke tilføje torrent. Kan ikke forbine til URL.",
  addTorrentFailedFile		: "Kunne ikke tilføje torrent. Den modtagende fil er ikke en valid torrent fil.",
@@ -272,6 +271,8 @@ var theUILang =
  badTempPath 			: "Webserverens bruger har ikke read/write/execute adgang til tmp mappen. ruTorrent virker derfor ikke.",
  badTempPath2			: "rTorrent brugeren skal have read/execute adgang til tmp mappen. ruTorrent virker derfor ikke.",
  doRandomizeHash		: "Randomize info hashes for cross-seeding",
- Recreate_files			: "Queue files recreation",
- Address			: "Adresse"
+ Recreate_files 		: "Queue files recreation",
+ Address			: "Adresse",
+ PeerDL 			: "Peer DL",
+ PeerDownloaded 		: "Peer Downloaded"
 };

@@ -157,8 +157,6 @@ var theUILang =
  EnableTracker			: "Activé",
  ClientVersion			: "Client",
  Flags				: "Flags",
- PeerDL				: "R. Client",
- PeerDownloaded			: "Reçu Client",
  ReqTimeout			: "Échec de la requête",
  GetTrackerMessage		: "Message reçu du tracker",
  Help				: "Aide",
@@ -244,6 +242,7 @@ var theUILang =
  scrapeUpdate			: "A été mis à jour",
  trkInterval			: "Intervalle",
  logAutoSwitch			: "Mise au premier automatique de l'onglet 'Log'",
+ showLabelSize			: "Afficher la taille des étiquettes",
  phpParameterUnavailable	: "La directive PHP 'register_argc_argv' est désactivée. Veuillez l'activer sinon certains plugins ne vont pas fonctionner.",
  addTorrentFailedURL		: "Erreur: le torrent n'a pas pu être ajouté à rTorrent. Impossible de résoudre l'URL.",
  addTorrentFailedFile		: "Erreur: le torrent n'a pas pu être ajouté à rTorrent. Le contenu récupéré n'est pas un fichier torrent.",
@@ -256,8 +255,8 @@ var theUILang =
  dontSet			: "Sans",
  webBadSessionError		: "Le plug-in ne fonctionnera pas. Le serveur web n'a pas la permission de lister le répertoire de session de rtorrent.",
  webBadSessionWarning		: "Certaines fonctionnalités ne seront pas disponibles. Le serveur web n'a pas la permission de lister le répertoire de session de rtorrent.",
- Developers			: "Développeurs",
- Check_new_version		: "Vérifier une nouvelle version",
+ Developers			: "Développeurs ",
+ Check_new_version		: "Recherche d'une nouvelle version...",
  here				: "ici",
  Num_No 			: "N°", // This means "Number". To be used as header for number count, e.g.: throttle/ratio plugin
  This_screen			: "Cette fenêtre",
@@ -272,6 +271,8 @@ var theUILang =
  badTempPath 			: "Le serveur web n'a pas accès en lecture/ecriture/éxécution au répertoire tmp. ruTorrent ne marchera pas.",
  badTempPath2			: "L'utilisateur rTorrent n'a pas accès en lecture/ecriture/éxécution au répertoire tmp. ruTorrent ne marchera pas.",
  doRandomizeHash		: "Info hash aléatoire pour faire du 'cross-seeding'",
- Recreate_files			: "Recréation des fichiers",
- Address			: "Adresse"
+ Recreate_files 		: "Recréation des fichiers",
+ Address			: "Adresse",
+ PeerDL 			: "R. Client",
+ PeerDownloaded 		: "Reçu Client"
 };

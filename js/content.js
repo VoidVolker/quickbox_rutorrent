@@ -91,10 +91,18 @@ function makeContent()
 		'<div class="cont fxcaret">'+
 			'<form action="addtorrent.php" id="addtorrent" method="post" enctype="multipart/form-data" target="uploadfrm">'+
 				'<label>'+theUILang.Base_directory+':</label><input type="text" id="dir_edit" name="dir_edit" class="TextboxLarge"/><br/>'+
+				'<span id="not_add_path_option">'+
 				'<label>&nbsp;</label><input type="checkbox" name="not_add_path" id="not_add_path"/>'+theUILang.Dont_add_tname+'<br/>'+
+				'</span>'+
+				'<span id="torrents_start_stopped_option">'+
 				'<label>&nbsp;</label><input type="checkbox" name="torrents_start_stopped" id="torrents_start_stopped"/>'+theUILang.Dnt_start_down_auto+'<br/>'+
+				'</span>'+
+				'<span id="fast_resume_option">'+
 				'<label>&nbsp;</label><input type="checkbox" name="fast_resume" id="fast_resume"/>'+theUILang.doFastResume+'<br/>'+
+				'</span>'+
+				'<span id="randomize_hash_option">'+				
 				'<label>&nbsp;</label><input type="checkbox" name="randomize_hash" id="randomize_hash"/>'+theUILang.doRandomizeHash+'<br/>'+
+				'</span>'+				
 				'<label>'+theUILang.Label+':</label><input type="text" id="tadd_label" name="tadd_label" class="TextboxLarge" /><select id="tadd_label_select"></select><br/>'+
 				'<hr/>'+
 				'<label>'+theUILang.Torrent_file+':</label><input type="file" multiple="multiple" name="torrent_file[]" id="torrent_file" accept="application/x-bittorrent" class="TextboxLarge"/><br/>'+
@@ -146,21 +154,24 @@ function makeContent()
 	input.onpaste = function() { setTimeout( input.onupdate, 10 ) };
 	var makeAddRequest = function(frm)
 	{
-		var s = theURLs.AddTorrentURL+"?";
+		var s = theURLs.AddTorrentURL;
+		var req = []
 		if($("#torrents_start_stopped").prop("checked"))
-			s += 'torrents_start_stopped=1&';
+			req.push('torrents_start_stopped=1');
 		if($("#fast_resume").prop("checked"))
-			s += 'fast_resume=1&';
+			req.push('fast_resume=1');
 		if($("#not_add_path").prop("checked"))
-			s += 'not_add_path=1&';
+			req.push('not_add_path=1');
 		if($("#randomize_hash").prop("checked"))
-			s += 'randomize_hash=1&';
+			req.push('randomize_hash=1');
 		var dir = $.trim($("#dir_edit").val());
 		if(dir.length)
-			s += ('dir_edit='+encodeURIComponent(dir)+'&');
+			req.push('dir_edit='+encodeURIComponent(dir));
 		var lbl = $.trim($("#tadd_label").val());
 		if(lbl.length)
-			s += ('label='+encodeURIComponent(lbl));
+			req.push('label='+encodeURIComponent(lbl));
+		if(req.length)
+			s+=('?'+req.join('&'));
 		frm.action = s;
 		return(true);
 	}
@@ -318,6 +329,9 @@ function makeContent()
 					"</div>"+
 					"<div class=\"op100l\"><input type=\"checkbox\" id=\"webui.log_autoswitch\"/>"+
 						"<label for=\"webui.log_autoswitch\" id=\"lbl_webui.log_autoswitch\" >"+theUILang.logAutoSwitch+"</label>"+
+					"</div>"+
+					"<div class=\"op100l\"><input type=\"checkbox\" id=\"webui.show_labelsize\"/>"+
+						"<label for=\"webui.show_labelsize\" id=\"lbl_webui.show_labelsize\" >"+theUILang.showLabelSize+"</label>"+
 					"</div>"+
 					"<div class=\"op100l\">"+
 						"<label for=\"webui.retry_on_error\">"+theUILang.retryOnErrorTitle+":</label>&nbsp;"+
@@ -614,7 +628,11 @@ function correctContent()
 		showPluginsTab:		0x0010,
 		canChangeULRate:	0x0020,
 		canChangeDLRate:	0x0040,
-		canChangeTorrentProperties:	0x0080
+		canChangeTorrentProperties:	0x0080,
+		canAddTorrentsWithoutPath:	0x0100,
+		canAddTorrentsWithoutStarting:	0x0200,
+		canAddTorrentsWithResume:	0x0400,
+		canAddTorrentsWithRandomizeHash:	0x0800
 	};
 
 	if(!$type(theWebUI.systemInfo))
@@ -652,6 +670,22 @@ function correctContent()
 		$("#lbl_prop-superseed").remove();
 		$("#dlgProps .OK").remove();
         }		
+        if(!(theWebUI.showFlags & showEnum.canAddTorrentsWithoutPath))
+	{
+		$("#addtorrent #not_add_path_option").remove();
+	}
+        if(!(theWebUI.showFlags & showEnum.canAddTorrentsWithoutStarting))
+	{
+		$("#addtorrent #torrents_start_stopped_option").remove();
+	}	
+        if(!(theWebUI.showFlags & showEnum.canAddTorrentsWithResume))
+	{
+		$("#addtorrent #fast_resume_option").remove();
+	}		
+        if(!(theWebUI.showFlags & showEnum.canAddTorrentsWithRandomizeHash))
+	{
+		$("#addtorrent #randomize_hash_option").remove();
+	}	
 	if(!theWebUI.systemInfo.rTorrent.started)
 	{
 		rPlugin.prototype.removePageFromTabs("TrackerList");
